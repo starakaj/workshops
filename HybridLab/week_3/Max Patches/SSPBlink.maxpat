@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x86"
 		}
 ,
@@ -28,6 +28,20 @@
 		"digest" : "",
 		"tags" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-36",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 349.5, 452.0, 46.0, 20.0 ],
+					"text" : "itoa"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -78,7 +92,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 349.5, 442.0, 34.0, 20.0 ],
+					"patching_rect" : [ 349.5, 421.0, 34.0, 20.0 ],
 					"text" : "+ 65"
 				}
 
@@ -118,8 +132,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 328.5, 568.0, 98.0, 20.0 ],
-					"text" : "sprintf %d%s%d"
+					"patching_rect" : [ 328.5, 568.0, 97.0, 20.0 ],
+					"text" : "sprintf %s%s%d"
 				}
 
 			}
@@ -146,8 +160,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 349.5, 488.0, 51.0, 20.0 ],
-					"text" : "pak i s i"
+					"patching_rect" : [ 349.5, 488.0, 55.0, 20.0 ],
+					"text" : "pak s s i"
 				}
 
 			}
@@ -454,7 +468,7 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x86"
 						}
 ,
@@ -747,7 +761,7 @@
 					"fontsize" : 12.0,
 					"framecolor" : [ 0.324617, 0.138508, 0.116169, 1.0 ],
 					"id" : "obj-25",
-					"items" : [ "Bluetooth-PDA-Sync", ",", "Bluetooth-Modem" ],
+					"items" : [ "Bluetooth-PDA-Sync", ",", "Bluetooth-Modem", ",", "usbmodem1411" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -958,8 +972,7 @@
 					"maxclass" : "panel",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 138.25, 11.5, 722.5, 229.0 ],
-					"presentation_rect" : [ 140.0, 13.0, 0.0, 0.0 ]
+					"patching_rect" : [ 138.25, 11.5, 722.5, 229.0 ]
 				}
 
 			}
@@ -1224,6 +1237,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-60", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-36", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1334,7 +1356,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-60", 0 ],
+					"destination" : [ "obj-36", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-65", 0 ]

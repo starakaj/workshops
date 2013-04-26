@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x86"
 		}
 ,
@@ -28,6 +28,20 @@
 		"digest" : "",
 		"tags" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 293.5, 258.0, 46.0, 20.0 ],
+					"text" : "itoa"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -78,7 +92,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 293.5, 258.0, 34.0, 20.0 ],
+					"patching_rect" : [ 293.5, 225.0, 34.0, 20.0 ],
 					"text" : "+ 65"
 				}
 
@@ -118,8 +132,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 272.5, 384.0, 98.0, 20.0 ],
-					"text" : "sprintf %d%s%d"
+					"patching_rect" : [ 272.5, 384.0, 97.0, 20.0 ],
+					"text" : "sprintf %s%s%d"
 				}
 
 			}
@@ -146,8 +160,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 293.5, 304.0, 51.0, 20.0 ],
-					"text" : "pak i s i"
+					"patching_rect" : [ 293.5, 304.0, 55.0, 20.0 ],
+					"text" : "pak s s i"
 				}
 
 			}
@@ -360,6 +374,15 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-60", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-60", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -469,7 +492,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-60", 0 ],
+					"destination" : [ "obj-1", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-65", 0 ]

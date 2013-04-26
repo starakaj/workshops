@@ -1,9 +1,11 @@
 /**
- * SSPBlink
+ * SSPSkeleton
  *
- * Using Sam's Simple Protocol to get stuff done.
+ * Using this skeleton code, make it possible to turn a servo using a controller in Max
  *
  */
+ 
+#include <Servo.h>
  
 char readBuffer[256];              // Space to store the bytes that we read off the serial connection
 int numBytesRead;                  // How many bytes we've read so far
@@ -12,6 +14,9 @@ int lastByteRead;                  // The byte we just read
 int destination;                   // Where we should send our message
 int method;                        // The method to call
 int value;                         // The value to pass to that message
+
+Servo servo;
+int servoPin = 5;
  
 void handleSSPMessage() {
   
@@ -27,16 +32,19 @@ void handleSSPMessage() {
   // Send the message to the appropriate place
   if (method == 'd') {
     setDigitalPin(destination, value);
+  } else if (method == 's') {
+    setServo(destination, value);
   }
 }
 
 void setDigitalPin(int pin, int lohi) {
-  Serial.print("Setting pin ");
-  Serial.print(pin);
-  Serial.print(" to value ");
-  Serial.println(lohi);
   pinMode(pin, OUTPUT);
   digitalWrite(pin, lohi);
+}
+
+void setServo(int servoPin, int angle) {
+  // Here we ignore the servo pin, but we could use it to pick between many servos
+  servo.write(angle);
 }
 
 void resetBuffer() {
@@ -45,6 +53,7 @@ void resetBuffer() {
 
 void setup() {
   Serial.begin(9600);
+  servo.attach(servoPin);
   resetBuffer();
 }
 

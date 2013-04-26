@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x86"
 		}
 ,
@@ -30,6 +30,20 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 360.0, 851.0, 46.0, 20.0 ],
+					"text" : "itoa"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
 					"fontsize" : 20.0,
 					"frgb" : 0.0,
 					"id" : "obj-26",
@@ -37,8 +51,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 516.0, 24.0, 539.0, 208.0 ],
-					"presentation_rect" : [ 570.0, 41.0, 0.0, 0.0 ],
+					"patching_rect" : [ 516.0, 24.0, 543.0, 208.0 ],
 					"text" : "DON'T FORGET!\n- The Max Serial object cannot be open at the same time as the serial monitor in the Arduino IDE, nor can you flash a new sketch to your Arduino while the Max Serial object is conneted\n- You must open the Max serial object by (1) selecting USB from the drop down menu and (2) clicking the toggle to open the connection and start polling before you can send messages to Arduino"
 				}
 
@@ -69,7 +82,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 287.5, 401.0, 32.5, 18.0 ],
-					"presentation_rect" : [ 284.0, 309.0, 0.0, 0.0 ],
 					"text" : "4"
 				}
 
@@ -85,7 +97,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 388.0, 401.0, 32.5, 18.0 ],
-					"presentation_rect" : [ 388.0, 312.0, 0.0, 0.0 ],
 					"text" : "3"
 				}
 
@@ -101,7 +112,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 488.5, 401.0, 32.5, 18.0 ],
-					"presentation_rect" : [ 493.0, 312.0, 0.0, 0.0 ],
 					"text" : "2"
 				}
 
@@ -117,7 +127,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 595.25, 401.0, 32.5, 18.0 ],
-					"presentation_rect" : [ 575.0, 223.0, 0.0, 0.0 ],
 					"text" : "1"
 				}
 
@@ -204,7 +213,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 765.0, 340.0, 183.0, 20.0 ],
-					"presentation_rect" : [ 681.0, 288.0, 0.0, 0.0 ],
 					"text" : "Set the dial to call method 's'"
 				}
 
@@ -220,7 +228,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 723.0, 340.0, 32.5, 18.0 ],
-					"presentation_rect" : [ 639.0, 288.0, 0.0, 0.0 ],
 					"text" : "2"
 				}
 
@@ -425,7 +432,7 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x86"
 						}
 ,
@@ -718,7 +725,7 @@
 					"fontsize" : 12.0,
 					"framecolor" : [ 0.324617, 0.138508, 0.116169, 1.0 ],
 					"id" : "obj-106",
-					"items" : [ "Bluetooth-PDA-Sync", ",", "Bluetooth-Modem" ],
+					"items" : [ "Bluetooth-PDA-Sync", ",", "Bluetooth-Modem", ",", "usbmodem1411" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -864,7 +871,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 381.0, 838.5, 34.0, 20.0 ],
+					"patching_rect" : [ 381.0, 819.5, 34.0, 20.0 ],
 					"text" : "+ 65"
 				}
 
@@ -904,8 +911,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 360.0, 964.5, 98.0, 20.0 ],
-					"text" : "sprintf %d%s%d"
+					"patching_rect" : [ 360.0, 964.5, 97.0, 20.0 ],
+					"text" : "sprintf %s%s%d"
 				}
 
 			}
@@ -932,8 +939,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 381.0, 884.5, 51.0, 20.0 ],
-					"text" : "pak i s i"
+					"patching_rect" : [ 381.0, 884.5, 55.0, 20.0 ],
+					"text" : "pak s s i"
 				}
 
 			}
@@ -1311,6 +1318,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-67", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1365,7 +1381,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-67", 0 ],
+					"destination" : [ "obj-2", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-65", 0 ]

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 6,
 			"minor" : 1,
-			"revision" : 2,
+			"revision" : 3,
 			"architecture" : "x86"
 		}
 ,
@@ -28,6 +28,20 @@
 		"digest" : "",
 		"tags" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
+					"id" : "obj-120",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 264.0, 1489.5, 46.0, 20.0 ],
+					"text" : "itoa"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Arial",
 					"fontsize" : 12.0,
@@ -166,7 +180,7 @@
 						"appversion" : 						{
 							"major" : 6,
 							"minor" : 1,
-							"revision" : 2,
+							"revision" : 3,
 							"architecture" : "x86"
 						}
 ,
@@ -459,7 +473,7 @@
 					"fontsize" : 12.0,
 					"framecolor" : [ 0.324617, 0.138508, 0.116169, 1.0 ],
 					"id" : "obj-106",
-					"items" : [ "Bluetooth-PDA-Sync", ",", "Bluetooth-Modem" ],
+					"items" : [ "Bluetooth-PDA-Sync", ",", "Bluetooth-Modem", ",", "usbmodem1411" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -605,7 +619,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 276.0, 1489.5, 34.0, 20.0 ],
+					"patching_rect" : [ 276.0, 1450.5, 34.0, 20.0 ],
 					"text" : "+ 65"
 				}
 
@@ -645,8 +659,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 255.0, 1615.5, 98.0, 20.0 ],
-					"text" : "sprintf %d%s%d"
+					"patching_rect" : [ 255.0, 1615.5, 97.0, 20.0 ],
+					"text" : "sprintf %s%s%d"
 				}
 
 			}
@@ -673,8 +687,8 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 276.0, 1535.5, 51.0, 20.0 ],
-					"text" : "pak i s i"
+					"patching_rect" : [ 276.0, 1535.5, 55.0, 20.0 ],
+					"text" : "pak s s i"
 				}
 
 			}
@@ -2208,6 +2222,15 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-67", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-120", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-152", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -2657,7 +2680,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-67", 0 ],
+					"destination" : [ "obj-120", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-65", 0 ]
