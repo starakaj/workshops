@@ -19,7 +19,7 @@ void handleSSPMessage() {
   // a well-formed string, replace the last carriage return with a null
   readBuffer[numBytesRead-1] = 0;  // An actual NULL character, which is not the same as '0'
   
-  // Now parse the message
+  // Now parse the message -- Nd255
   destination = readBuffer[0] - 65;
   method = readBuffer[1];
   value = String(readBuffer).substring(2).toInt();    // Parse the rest of the string as an integer
@@ -27,6 +27,10 @@ void handleSSPMessage() {
   // Send the message to the appropriate place
   if (method == 'd') {
     setDigitalPin(destination, value);
+  }
+  
+  else if (method == 'b') {
+    blinkPin(destination, value);
   }
 }
 
@@ -37,6 +41,17 @@ void setDigitalPin(int pin, int lohi) {
   Serial.println(lohi);
   pinMode(pin, OUTPUT);
   digitalWrite(pin, lohi);
+}
+
+void blinkPin(int pin, int time) {
+  Serial.print("Blinking pin ");
+  Serial.print(pin);
+  Serial.print(" for milliseconds ");
+  Serial.println(time);
+  pinMode(pin, OUTPUT);
+  digitalWrite(pin, HIGH);
+  delay(time);
+  digitalWrite(pin, LOW);
 }
 
 void resetBuffer() {
